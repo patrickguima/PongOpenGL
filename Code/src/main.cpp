@@ -15,7 +15,7 @@ const GLuint SCREEN_WIDTH = 1024;
 // The height of the screen
 const GLuint SCREEN_HEIGHT = 720;
 
-Game Breakout(SCREEN_WIDTH, SCREEN_HEIGHT);
+Game Pong(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 int main(int argc, char *argv[])
 {
@@ -43,14 +43,14 @@ int main(int argc, char *argv[])
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	// Initialize game
-	Breakout.Init();
+	Pong.Init();
 
 	// DeltaTime variables
 	GLfloat deltaTime = 0.0f;
 	GLfloat lastFrame = 0.0f;
 
 	// Start Game within Menu State
-	Breakout.State = GAME_MENU;
+	Pong.State = GAME_MENU;
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -64,15 +64,15 @@ int main(int argc, char *argv[])
 		
 		//deltaTime = 0.001f;
 		// Manage user input
-		Breakout.ProcessInput(deltaTime);
+		Pong.ProcessInput(deltaTime);
 
 		// Update Game state
-		Breakout.Update(deltaTime);
+		Pong.Update(deltaTime);
 
 		// Render
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-		Breakout.Render();
+		Pong.Render();
 
 		glfwSwapBuffers(window);
 	}
@@ -92,8 +92,8 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	if (key >= 0 && key < 1024)
 	{
 		if (action == GLFW_PRESS)
-			Breakout.Keys[key] = GL_TRUE;
+			Pong.Keys[key] = GL_TRUE;
 		else if (action == GLFW_RELEASE)
-			Breakout.Keys[key] = GL_FALSE;
+			Pong.Keys[key] = GL_FALSE;
 	}
 }
