@@ -1,8 +1,9 @@
 # PongOpenGL
 
-Implementation of a simple Pong game using OpenGL
+Implementação do jogo pong em openGL
+Trabalho desenvolvido para a disciplinha de Computaço Grafica
 
-Base project from https://learnopengl.com/ and audio library from https://www.ambiera.com/irrklang/downloads.html (i used version 1.5)
+Projeto base https://learnopengl.com/ e biblioteca de audio https://www.ambiera.com/irrklang/downloads.html (versão 1.5)
 
 
 ![Screnshot](ponggame.png)
